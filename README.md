@@ -1,2 +1,2 @@
-# debussy
+# midi-mcp
 coming soon...
