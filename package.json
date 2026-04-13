@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "coming soon...",
   "main": "./midi-mcp.js",
-  "bin": "./midi-mcp.js",
+  "bin": {
+    "midi-mcp": "midi-mcp.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jazz-soft/debussy.git"
+    "url": "git+https://github.com/jazz-soft/midi-mcp.git"
   },
-  "homepage": "https://github.com/jazz-soft/debussy#readme",
+  "homepage": "https://github.com/jazz-soft/midi-mcp#readme",
   "bugs": {
-    "url": "https://github.com/jazz-soft/debussy/issues"
+    "url": "https://github.com/jazz-soft/midi-mcp/issues"
   },
   "license": "MIT"
 }
