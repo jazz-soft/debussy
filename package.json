@@ -1,10 +1,10 @@
 {
   "name": "midi-mcp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "coming soon...",
-  "main": "./midi-mcp.js",
+  "main": "index.js",
   "bin": {
-    "midi-mcp": "midi-mcp.js"
+    "midi-mcp": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
