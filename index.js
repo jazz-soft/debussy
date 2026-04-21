@@ -10,17 +10,17 @@ const server = new McpServer({ name, version });
 
 server.registerTool(
   "get_midi_time",
-  { description: "Get current MIDI time in milliseconds", inputinputSchema: {} },
+  { description: "Get current MIDI time in milliseconds", inputSchema: {} },
   get_midi_time
 );
 server.registerTool(
   "list_midi_out",
-  { description: "Get the list of MIDI-Out ports", inputinputSchema: {} },
+  { description: "Get the list of MIDI-Out ports", inputSchema: {} },
   list_midi_out
 );
 server.registerTool(
   "list_midi_in",
-  { description: "Get the list of MIDI-In ports", inputinputSchema: {} },
+  { description: "Get the list of MIDI-In ports", inputSchema: {} },
   list_midi_in
 );
 
@@ -34,17 +34,17 @@ async function init() {
 }
 async function get_midi_time() {
   await init();
-  return { result: new Date().getTime() - START_TIME };
+  return { content: [ { type: 'text', text: new Date().getTime() - START_TIME } ] };
 }
 async function list_midi_out() {
   await init();
   const result = await JZZ().info().outputs.map(x => x.name);
-  return { result };
+  return { content: [ { type: 'text', text: JSON.stringify(result) } ] };
 }
 async function list_midi_in() {
   await init();
   const result = await JZZ().info().inputs.map(x => x.name);
-  return { result };
+  return { content: [ { type: 'text', text: JSON.stringify(result) } ] };
 }
 
 if (require.main === module) {
@@ -57,7 +57,7 @@ if (require.main === module) {
 }
 else {
   module.exports = {
-    node, version,
+    name, version,
     get_midi_time,
     list_midi_out,
     list_midi_in
